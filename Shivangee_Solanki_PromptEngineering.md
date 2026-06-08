@@ -201,17 +201,92 @@ This tagline is short, memorable, and directly communicates the product's eco-fr
 
 ### 1.2 Iteration Documentation
 
+## Scenario A: Technical Explanation (Machine Learning)
+
 | Version | Prompt                                                                                                                                                                                                                                                | What Changed                                                                                                           | Why This Improved the Output                                                                |
 | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
 | V1      | Explain Machine Learning to a 10-year-old child.                                                                                                                                                                                                      | N/A                                                                                                                    | N/A                                                                                         |
 | V2      | You are an elementary school teacher. Explain Machine Learning to a 10-year-old child using simple language and a real-life example. Avoid technical terms and keep the explanation under 150 words.                                                  | Added a role (elementary school teacher), specified the audience, requested simple language and a real-life example.   | The explanation became easier for children to understand and included relatable examples.   |
 | V3      | You are a fun and friendly teacher explaining technology to a curious 10-year-old. Explain Machine Learning using simple words, a relatable example, and a short analogy. Avoid technical jargon. Make the explanation engaging and easy to remember. | Added a friendly teaching role, requested an analogy, emphasized engagement, and instructed the model to avoid jargon. | The output became more engaging, memorable, and age-appropriate while maintaining accuracy. |
 
+## Scenario B: Professional Email
+
+| Version | Prompt                                                                                                                                                                                                                                                                                                                                         | What Changed                                                                                            | Why This Improved the Output                                                       |
+| ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| V1      | Write an email declining a job offer.                                                                                                                                                                                                                                                                                                          | N/A                                                                                                     | N/A                                                                                |
+| V2      | Write a professional email declining a job offer politely. Thank the company for the opportunity and express interest in working with the company in the future.                                                                                                                                                                               | Added requirements for gratitude and future interest in the company.                                    | The email became more professional, polite, and relationship-focused.              |
+| V3      | You are a professional career advisor. Write a polite and professional email declining a job offer because another opportunity was accepted. Express sincere gratitude for the offer, appreciation for the interview process, and continued interest in the company for future opportunities. Keep the tone respectful, positive, and concise. | Added a professional role, provided context for declining, and specified tone and content requirements. | The email became realistic, polished, and suitable for professional communication. |
+
+## Scenario C: Creative Content (Eco-Friendly Water Bottle Tagline)
+
+| Version | Prompt                                                                                                                                                                                                                                                                                                                                                      | What Changed                                                                           | Why This Improved the Output                                                                 |
+| ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| V1      | Create a tagline for an eco-friendly water bottle brand.                                                                                                                                                                                                                                                                                                    | N/A                                                                                    | N/A                                                                                          |
+| V2      | Create five creative taglines for an eco-friendly water bottle brand. Focus on sustainability, reducing plastic waste, and healthy living.                                                                                                                                                                                                                  | Requested multiple taglines and added brand themes.                                    | Produced a wider variety of ideas and better aligned the content with the brand's mission.   |
+| V3      | You are an award-winning marketing copywriter. Create 10 short, memorable, and original taglines for a modern eco-friendly water bottle brand. The brand targets environmentally conscious young adults. Emphasize sustainability, reducing single-use plastic, and making a positive impact. Use creative and inspiring language that is easy to remember. | Added a professional role, target audience, brand values, and creativity requirements. | Generated stronger, more original, and more marketable taglines with a clear brand identity. |
+
 ### 1.3 Role and Context Analysis
+In Scenario A, I assigned the role of a fun and friendly teacher and provided the context that the explanation was intended for a 10-year-old child. This helped the LLM use simple language, relatable examples, and an engaging tone instead of technical terminology.
+
+In Scenario B, I assigned the role of a professional career advisor and provided the context that the candidate was declining a job offer after accepting another opportunity. This resulted in a more professional, respectful, and realistic email that maintained a positive relationship with the company.
+
+In Scenario C, I assigned the role of an award-winning marketing copywriter and specified that the target audience was environmentally conscious young adults. This helped generate more creative, memorable, and audience-focused taglines that better matched the brand's purpose and marketing goals.
+
+Overall, adding role assignment and context improved the quality of the outputs by making them more relevant, targeted, and appropriate for the intended audience and purpose.
 
 ## Part 2: Temperature & Parameter Control
 ### 2.1 Temperature Experimentation
+
+## Chosen Task
+
+Explaining what photosynthesis is
+
+## Original Prompt
+
+"Explain what photosynthesis is."
+
+## Test 1: Low Temperature (0.2)
+
+Prompt: Explain what photosynthesis is. Be precise and consistent.
+
+## Output:
+
+Photosynthesis is the process by which plants, algae, and some bacteria convert sunlight into chemical energy. During this process, carbon dioxide from the air and water from the soil are combined using sunlight to produce glucose (a type of sugar) and oxygen. Photosynthesis mainly occurs in the chloroplasts of plant cells. This process is essential because it provides food for plants and releases oxygen into the atmosphere.
+
+## Test 2: Medium Temperature (0.7)
+
+Prompt: Explain what photosynthesis is.
+
+## Output:
+
+Photosynthesis is the way plants make their own food using sunlight. Plants absorb water through their roots and carbon dioxide through their leaves. Using energy from sunlight, they convert these materials into glucose, which provides energy for growth and survival, and oxygen, which is released into the air. Photosynthesis is important because it supports most life on Earth by producing food and oxygen.
+
+## Test 3: High Temperature (1.2)
+
+Prompt: Explain what photosynthesis is. Be creative and explore diverse ideas.
+
+## Output:
+
+Imagine a plant as a tiny solar-powered factory. Every day, it captures sunlight and uses that energy to transform water and carbon dioxide into food. This magical-looking process is called photosynthesis. As plants create the sugars they need to grow, they also release oxygen as a helpful by-product, making life possible for animals and humans. Without photosynthesis, Earth's ecosystems would look very different, with far less food and oxygen available.
+
+## Comparison Table
+
+| Feature          | Low Temperature (0.2)  | Medium Temperature (0.7) | High Temperature (1.2)     |
+| ---------------- | ---------------------- | ------------------------ | -------------------------- |
+| Writing Style    | Formal and factual     | Balanced and clear       | Creative and descriptive   |
+| Creativity Level | Very low               | Moderate                 | High                       |
+| Consistency      | Very high              | High                     | Moderate                   |
+| Use of Examples  | None                   | Simple examples          | Imaginative comparisons    |
+| Predictability   | Highly predictable     | Some variation           | More varied and expressive |
+| Best For         | Technical explanations | General audiences        | Engaging storytelling      |
+
 ### 2.2 Analysis & Recommendations
+
+Low temperature is useful when accuracy and consistency are important. Two specific use cases are generating technical documentation and answering factual educational questions. 
+
+High temperature is useful when creativity is needed, such as writing stories or brainstorming marketing ideas. It can also help generate unique content for advertisements and social media posts. 
+
+For the task of explaining photosynthesis, the medium temperature worked best because it provided a clear and accurate explanation while still being easy and engaging for a general audience to understand.
 
 ## Part 3: Strategic Prompting Techniques
 ### 3.1 Chain-of-Thought Prompting
