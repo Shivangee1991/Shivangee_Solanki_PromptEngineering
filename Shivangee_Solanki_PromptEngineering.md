@@ -293,7 +293,7 @@ High temperature is useful when creativity is needed, such as writing stories or
 For the task of explaining photosynthesis, the medium temperature worked best because it provided a clear and accurate explanation while still being easy and engaging for a general audience to understand.
 
 
-## Part 3: Strategic Prompting Techniques
+# Part 3: Strategic Prompting Techniques
 ## 3.1 Chain-of-Thought Prompting
 
 ### Chosen Problem - Option A : Math/logic Problem
