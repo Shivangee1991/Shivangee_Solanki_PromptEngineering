@@ -290,7 +290,109 @@ For the task of explaining photosynthesis, the medium temperature worked best be
 
 ## Part 3: Strategic Prompting Techniques
 ### 3.1 Chain-of-Thought Prompting
+
+## Chosen Problem - Option A
+If a train travels 120 km in 2 hours, then stops for 30 minutes, then travels another 90 km in 1.5 hours, what is its average speed for the entire journey?
+
+## A. Without Chain-of-Thought
+## Prompt
+
+Calculate the average speed for the following journey and provide only the final answer: A train travels 120 km in 2 hours, stops for 30 minutes, then travels another 90 km in 1.5 hours.
+
+## LLM Output
+
+Average speed = 54.29 km/h
+
+## B. With Chain-of-Thought
+## Prompt
+
+Solve the following problem step by step and show all reasoning: If a train travels 120 km in 2 hours, then stops for 30 minutes, then travels another 90 km in 1.5 hours, what is its average speed for the entire journey?
+
+## LLM Output
+First part of journey:
+Distance = 120 km
+Time = 2 hours
+Second part of journey:
+Distance = 90 km
+Time = 1.5 hours
+Stop time:
+30 minutes = 0.5 hours
+Total distance:
+120 + 90 = 210 km
+Total time:
+2 + 1.5 + 0.5 = 4 hours
+Average speed:
+Average Speed = Total Distance ÷ Total Time
+210 ÷ 4 = 52.5 km/h
+
+## Final Answer: 52.5 km/h
+
+## Comparison
+
+The non-chain-of-thought output provided only a final answer without showing how it was calculated. The chain-of-thought output clearly explained each step, making it easier to verify the solution and identify mistakes. Chain-of-thought prompting helps with complex reasoning because it breaks a problem into smaller logical steps. One limitation is that the response becomes longer and may take more time to generate.
+
 ### 3.2 Few-Shot Prompting
+
+## Step 1: Zero-Shot Attempt
+## Prompt
+
+Classify the sentiment of each review as Positive, Negative, or Neutral.
+
+## Results
+| Review                                                          | Classification |
+| --------------------------------------------------------------- | -------------- |
+| The product arrived damaged and customer service was unhelpful. | Negative       |
+| Works as expected, nothing special but does the job.            | Neutral        |
+| Absolutely love this! Best purchase I've made all year!         | Positive       |
+| The quality is okay but slightly overpriced for what you get.   | Neutral        |
+| Terrible experience, would not recommend to anyone.             | Negative       |
+
+
+## Step 2: Few-Shot Attempt
+## Prompt
+
+Classify each review as Positive, Negative, or Neutral based on these examples:
+
+Review: "This product exceeded my expectations!"
+Sentiment: Positive
+
+Review: "Completely broke after one week of use."
+Sentiment: Negative
+
+Review: "It's fine, does what it says on the box."
+Sentiment: Neutral
+
+Review: "Excellent quality and fast delivery."
+Sentiment: Positive
+
+Review: "Not worth the money I spent."
+Sentiment: Negative
+
+Now classify the following reviews.
+
+## Results
+
+| Review                                                          | Classification |
+| --------------------------------------------------------------- | -------------- |
+| The product arrived damaged and customer service was unhelpful. | Negative       |
+| Works as expected, nothing special but does the job.            | Neutral        |
+| Absolutely love this! Best purchase I've made all year!         | Positive       |
+| The quality is okay but slightly overpriced for what you get.   | Neutral        |
+| Terrible experience, would not recommend to anyone.             | Negative       |
+
+## Step 3: Analysis
+## Comparison Table
+| Review # | Zero-Shot Result | Few-Shot Result | Correct Label | Improved? |
+| -------- | ---------------- | --------------- | ------------- | --------- |
+| 1        | Negative         | Negative        | Negative      | No        |
+| 2        | Neutral          | Neutral         | Neutral       | No        |
+| 3        | Positive         | Positive        | Positive      | No        |
+| 4        | Neutral          | Neutral         | Neutral       | No        |
+| 5        | Negative         | Negative        | Negative      | No        |
+
+## Explanation
+
+Few-shot prompting is most useful when the task requires a specific format, style, or interpretation that may not be obvious from the prompt alone. By providing examples, the model better understands the expected output and can produce more consistent results. It is especially helpful for classification tasks, structured data extraction, and domain-specific applications where labels may be ambiguous.
 
 ## Part 4: Responsible AI & Limitations
 ### 4.1 Testing for Hallucinations
